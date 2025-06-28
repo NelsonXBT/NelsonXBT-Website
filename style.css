@@ -19,6 +19,41 @@ header {
 header p {
     padding: 0 3rem;
 }
+/* Navbar base */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: rgb(2, 32, 20);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo (your name) */
+.navbar .logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Blog button */
+.blog-btn {
+  background-color: #64a103;
+  color: white;
+  padding: 0.4rem 0.5rem;
+  border-radius: 0.4rem;
+  text-decoration: none;
+  font-size: 1rem;
+  border: 2px solid #64a103;
+  transition: all 0.3s ease;
+}
+
+.blog-btn:hover {
+  background-color: #4c7a01;
+  border-color: #4c7a01;
+}
 header .pfp {
     width: 7rem;
     height: 7rem;
@@ -58,12 +93,12 @@ button:hover {
     background-color: #006d4c;
     border: 0.2rem solid #006d4c;
 }
-
-section {
+.section {
     background-color: #f1efef;
     border: 0.2rem solid #eeeeee;
     border-radius: 1rem;
-    margin: 5rem 1em 0rem 1rem;
+    margin-top: 2rem;
+    
 }
 
 .fa-x-twitter {
@@ -114,9 +149,23 @@ section {
   50% { border-color: transparent }
 }
 
+footer {
+  background-color: rgb(2, 32, 20) ;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #b4b3b3;
+  padding: 1rem 1rem;
+  margin-top: 2rem;
+}
 
 
-@media (min-width: 600px) {
+
+
+
+
+
+
+@media (min-width: 768px) {
     
     header .pfp {
     width: 10rem;
@@ -136,5 +185,22 @@ header p {
 .social-icons {
     font-size: 2rem;
 }
+.navbar {
+  background-color: rgb(2, 32, 20);
+}
+.blog-btn {
+  margin: auto;
+  padding: 0.4rem 0.5rem;
+  font-size: 1rem;
+  border: 2px solid #64a103;
+
+}
+.navbar .logo {
+  margin: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fffefe;
+}
+
 
 }
