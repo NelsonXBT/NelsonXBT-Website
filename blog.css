@@ -135,6 +135,12 @@ footer {
   color: #080000;
 }
 
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+  gap: 2rem;
+  margin-top: 1.2rem;
+}
 
 .blog-card img {
   width: 100%;
