@@ -137,6 +137,7 @@ footer {
 
 .blog-grid {
   grid-template-columns: repeat(3, 1fr); /* exactly 3 columns */
+  gap: 2.5rem;
   
 }
 
