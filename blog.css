@@ -2,6 +2,15 @@
 html {
     background-color: #eeeeee;
 }
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.blog-section {
+  flex: 1;
+}
 
 .navbar {
   display: flex;
