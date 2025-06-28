@@ -2,8 +2,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./blog.css">
-    <link rel="icon" href="./nelsonxbt-favicon.png">
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="icon" href="./assets/nelsonxbt-favicon.png">
     <title>NelsonXBT Blogs</title>
 </head>
 <body>
@@ -23,14 +23,20 @@
 
 
     <!-- ===== The Grid section ===== -->
+     <input
+        type="text"
+        id="searchInput"
+        placeholder="Search blog posts..."
+        class="blog-search"
+      />
     <div class="blog-grid">
     <a href="#" class="blog-card">
-      <img src="./galileo1-1.webp" alt="Post 1 Thumbnail" />
+      <img src="./assets/galileo1-1.webp" alt="Post 1 Thumbnail" />
       <h3>How I Built My First HTML Site</h3>
     </a>
     
     <a href="#" class="blog-card">
-      <img src="./what-is-chaps.webp" alt="Post 2 Thumbnail" />
+      <img src="./assets/what-is-chaps.webp" alt="Post 2 Thumbnail" />
       <h3>Best Airdrop Dashboards I Use</h3>
     </a>
     
@@ -46,5 +52,9 @@
         <p>&copy; 2025 NelsonXBT — Built with 💻 <br> While drinking ☕</p>
     </footer>
     
+
+
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <script src="./js/blogScript.js" defer></script>
 </body>
 </html>

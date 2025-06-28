@@ -73,7 +73,7 @@ header .pfp {
     height: 7rem;
     border: 0.2rem solid #005a32;
     border-radius: 50%;
-    background-image: url('./nelsonxbt-pfp.jpg');
+    background-image: url('./../assets/nelsonxbt-pfp.jpg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
