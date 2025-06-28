@@ -19,7 +19,18 @@ header {
 header p {
     padding: 0 3rem;
 }
-
+header .pfp {
+    width: 7rem;
+    height: 7rem;
+    border: 0.2rem solid #005a32;
+    border-radius: 50%;
+    background-image: url('./nelsonxbt-pfp.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0% auto;
+    
+}
 .social-icons {
     font-size: 1.7rem;
 }
@@ -52,7 +63,7 @@ section {
     background-color: #f1efef;
     border: 0.2rem solid #eeeeee;
     border-radius: 1rem;
-    margin: 10rem 1em 0rem 1rem;
+    margin: 5rem 1em 0rem 1rem;
 }
 
 .fa-x-twitter {
@@ -82,3 +93,48 @@ section {
     color: rgb(160, 3, 3);
 }
 
+.typewriter {
+  display: inline-block;
+  font-size: 1.4rem;
+  font-weight: bold;
+  overflow: hidden;
+  border-right: 2px solid black;
+  white-space: nowrap;
+  animation: typing 2.5s steps(22, end) forwards,
+             blink 0.75s step-end 3.3s 4; /* Stop after ~3s */
+  margin: 2rem auto 1rem auto;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 20ch }
+}
+
+@keyframes blink {
+  50% { border-color: transparent }
+}
+
+
+
+@media (min-width: 600px) {
+    
+    header .pfp {
+    width: 10rem;
+    height: 10rem;
+    border: 0.2rem solid #005a32;
+    
+}
+.typewriter {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+header p {
+    font-size: 1.34rem;
+    padding: 0 5rem;
+}
+.social-icons {
+    font-size: 2rem;
+}
+
+}
