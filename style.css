@@ -202,6 +202,9 @@ header p {
   font-weight: bold;
   color: #fffefe;
 }
-
+footer {
+  font-size: 1.05rem;
+  
+}
 
 }
