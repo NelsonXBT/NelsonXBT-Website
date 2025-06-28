@@ -1,0 +1,83 @@
+html {
+    background-color: #eeeeee;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 10px;
+    margin: 0 auto;
+    width: 100vw;
+    text-align: center;
+    overflow-x: hidden;
+    max-width: 1500px;
+    background-color: #eeeeee;
+}
+
+header {
+    font-size: 1rem;
+}
+header p {
+    padding: 0 3rem;
+}
+
+.social-icons {
+    font-size: 1.7rem;
+}
+
+.community {
+    margin-top: 3rem;
+    font-size: 1rem;
+    
+}
+
+.table {
+    display: flex;
+    justify-content: center;
+}
+button {
+    background-color: #005a32;
+    color: white;
+    font-size: 1.2rem;
+    border: 0.2rem solid #005a32;
+    border-radius: 0.3rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem 3rem;
+}
+button:hover {
+    background-color: #02361f;
+}
+
+section {
+    background-color: #f1efef;
+    border: 0.2rem solid #eeeeee;
+    border-radius: 1rem;
+    margin: 10rem 1em 0rem 1rem;
+}
+
+.fa-x-twitter {
+ color: black;
+}
+.fa-x-twitter:hover {
+ color: blue;
+}
+
+.fa-telegram {
+    color: blue;
+}
+.fa-telegram:hover {
+    color: rgb(6, 6, 124);
+}
+
+.fa-discord {
+    color: blue;
+}
+.fa-discord:hover {
+    color: rgb(62, 62, 68);
+}
+.fa-youtube {
+    color: red;
+}
+.fa-youtube:hover {
+    color: rgb(160, 3, 3);
+}
+
