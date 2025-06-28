@@ -31,17 +31,25 @@ header p {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 2rem;
-  background-color: rgb(2, 32, 20);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar.scrolled {
+  background-color: rgba(2, 32, 20, 0.795); /* slightly darker gray */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
-/* Logo (your name) */
 .navbar .logo {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .logo {
+  color: white;
 }
 
 /* Blog button */
@@ -192,9 +200,6 @@ header p {
 .social-icons {
     font-size: 2rem;
 }
-.navbar {
-  background-color: rgb(2, 32, 20);
-}
 .blog-btn {
   margin: auto;
   padding: 0.4rem 0.5rem;
@@ -206,11 +211,11 @@ header p {
   margin: auto;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fffefe;
+  color: #000000;
 }
+
 footer {
   font-size: 1.05rem;
-  
 }
 
 }
