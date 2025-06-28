@@ -41,10 +41,11 @@ button {
     border: 0.2rem solid #005a32;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
-    padding: 0.5rem 3rem;
+    padding: 0.5rem 1rem;
 }
 button:hover {
-    background-color: #02361f;
+    background-color: #006d4c;
+    border: 0.2rem solid #006d4c;
 }
 
 section {
