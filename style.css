@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 html {
     background-color: #eeeeee;
@@ -102,11 +107,11 @@ button:hover {
     border: 0.2rem solid #006d4c;
 }
 .section {
-    background-color: #f1efef;
-    border: 0.2rem solid #eeeeee;
-    border-radius: 1rem;
-    margin-top: 2rem;
-    
+  background-color: #f1efef;
+  border: 0.2rem solid #eeeeee;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 0; /* ✨ This helps */
 }
 
 .fa-x-twitter {
