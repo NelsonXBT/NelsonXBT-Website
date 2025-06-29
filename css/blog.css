@@ -39,7 +39,7 @@ body {
 /* Blog button */
 .blog-btn {
   background-color: white;
-  color: rgb(14, 0, 0);
+  color: #bf9b31;
   padding: 0.4rem 0.5rem;
   border-radius: 0.4rem;
   text-decoration: none;
@@ -119,7 +119,7 @@ body {
 .blog-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  color: rgb(16, 71, 5);
+  color: #b38704;
 }
 
 #scrollTopBtn {
@@ -128,7 +128,7 @@ body {
   right: 30px;
   z-index: 999;
   font-size: 1.5rem;
-  background-color: #005a32;
+  background-color: #bf9b31;
   color: white;
   border: none;
   border-radius: 50%;
@@ -142,7 +142,7 @@ body {
 
 
 footer {
-  background-color: rgb(2, 32, 20) ;
+  background-color: #033631 ;
   text-align: center;
   font-size: 0.9rem;
   color: #b4b3b3;
