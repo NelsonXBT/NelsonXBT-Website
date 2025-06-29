@@ -6,6 +6,8 @@ html, body {
 }
 
 body {
+  background-color: #033631;
+  /* background-color: #bf9b31; */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -14,23 +16,10 @@ body {
 section {
   flex: 1;
 }
+.upper {
+  background-color: #033631;
+}
 
-
-/* body {
-  
-    display: flex;
-    flex-direction: column;
-    background-color: #eeeeee;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 10px;
-    text-align: center;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    height: 100%;
-} */
  h1, h2, h3 {
     font-weight: 700;
   }
@@ -39,10 +28,13 @@ header {
     font-size: 1rem;
 }
 header h1 {
+    color: #bf9b31;
     padding: 0 3rem;
-    font-size: 1.8rem;
+    font-size: 2rem;
+    margin-top: 4rem;
 }
 header p {
+  color: #fcf8f8;
   font-style: oblique;
     padding: 0 3rem;
 }
@@ -65,7 +57,7 @@ header p {
 .navbar .logo {
   font-size: 1.3rem;
   font-weight: bold;
-  color: #000000;
+  color: #bf9b31;
   transition: color 0.3s ease;
 }
 
@@ -73,59 +65,24 @@ header p {
   color: white;
 }
 
-/* Blog button */
-.blog-btn {
-  background-color: #64a103;
-  color: white;
-  padding: 0.4rem 0.5rem;
-  border-radius: 0.4rem;
-  text-decoration: none;
-  font-size: 1rem;
-  border: 2px solid #64a103;
-  transition: all 0.3s ease;
-}
-
-.blog-btn:hover {
-  background-color: #4c7a01;
-  border-color: #4c7a01;
-}
-header .pfp {
-    width: 7rem;
-    height: 7rem;
-    border: 0.2rem solid #005a32;
-    border-radius: 50%;
-    background-image: url('./../assets/nelsonxbt-pfp.jpg');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    margin: 0% auto;
-    
-}
 .social-follow {
+  color: #fcf8f8;
   display: flex;
   align-items: left;
   gap: 10px;
   justify-content: left;
   margin-top: 20px;
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 0.8rem;
   font-weight: 500;
   padding: 0 3rem 2rem 3.2rem;
 }
 
 .social-icons a {
   margin: 0 5px;
-  color: #000;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
 }
-
-
-/* .community {
-    margin-top: 3rem;
-    font-size: 3rem;
-    
-} */
 
 
 .table {
@@ -134,15 +91,7 @@ header .pfp {
   gap: 2rem;
   padding: 0 3rem;
 }
-thead {
-  font-size: 0.7rem;
-}
-.table1 {
-  font-size: 0.6rem;
-}
-tr td{
-  padding: 0.2rem 1rem 0.2rem 0.4rem;
-}
+
 .community-link,
 .blog-link {
   display: flex;
@@ -150,10 +99,11 @@ tr td{
   gap: 8px;
   text-decoration: none;
   font-family: 'Inter', sans-serif;
-  font-size: 0.83rem;
+  font-size: 0.74rem;
   font-weight: 600;
-  color: black;
+  color: #bf9b31;
   padding: 0.5rem 0;
+  margin-top: 4rem;
 }
 
 .community-link img,
@@ -168,23 +118,6 @@ tr td{
   opacity: 0.8;
 }
 
-button {
-    background-color: #fcf8f8;
-    color: rgb(12, 0, 0);
-    font-size: 0.7rem;
-    font-weight: bold;
-    border: 0.2rem solid #005a32;
-    border-radius: 0.3rem;
-    margin-bottom: 1rem;
-    padding: 0.5rem 0.5rem;
-}
-.activeButton {
-  padding: 0.1rem 0rem;
-}
-button:hover {
-    background-color: #eeeeee;
-    border: 0.2rem solid #006d4c;
-}
 .section {
   background-color: #f1efef;
   border: 0.2rem solid #eeeeee;
@@ -194,64 +127,56 @@ button:hover {
 }
 
 .fa-x-twitter {
- color: black;
+ color: rgb(255, 255, 255);
 }
 .fa-x-twitter:hover {
  color: blue;
 }
 
 .fa-telegram {
-    color: blue;
+    color: rgb(248, 248, 250);
 }
 .fa-telegram:hover {
     color: rgb(6, 6, 124);
 }
 
 .fa-discord {
-    color: blue;
+    color: rgb(253, 253, 255);
 }
 .fa-discord:hover {
     color: rgb(62, 62, 68);
 }
 .fa-youtube {
-    color: red;
+    color: rgb(250, 5, 5);
 }
 .fa-youtube:hover {
     color: rgb(160, 3, 3);
 }
 
-.typewriter {
-  display: inline-block;
-  font-size: 1.4rem;
-  font-weight: bold;
-  overflow: hidden;
-  border-right: 2px solid black;
-  white-space: nowrap;
-  animation: typing 2.5s steps(22, end) forwards,
-             blink 0.75s step-end 3.3s 4; /* Stop after ~3s */
-  margin: 2rem auto 1rem auto;
+
+ hr {
+  border: none;           
+  height: 2px;            
+  background-color: #bf9b31;  
+  margin: 1rem 0;         
 }
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 20ch }
-}
-
-@keyframes blink {
-  50% { border-color: transparent }
-}
-
-
-
 
 footer {
-  background-color: rgb(2, 32, 20) ;
+  background-color: #033631 ;
   text-align: center;
   font-size: 0.9rem;
   color: #b4b3b3;
   padding: 1rem 1rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 0;
+}
+.container {
+  max-width: 900px;         /* limit width on large screens */
+  margin: 0 auto;           /* center it horizontally */
+  padding: 0 1.5rem;        /* some breathing room */
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 
@@ -262,41 +187,53 @@ footer {
 
 
 @media (min-width: 768px) {
+  header,
+  header p,
+  .social-follow,
+  .table {
+    text-align: left;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+ header h1 {
     
-    header .pfp {
-    width: 10rem;
-    height: 10rem;
-    border: 0.2rem solid #005a32;
+    font-size: 3rem;
     
 }
-.typewriter {
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: bold;
-}
-header p {
-    font-size: 1.34rem;
-    padding: 0 5rem;
-}
-.social-icons {
-    font-size: 2rem;
-}
-.blog-btn {
-  margin: auto;
-  padding: 0.4rem 0.5rem;
-  font-size: 1rem;
-  border: 2px solid #64a103;
+  header p {
+    font-size: 1.5rem;
+    padding-left: 3.3rem;
+  }
 
+
+ .social-follow {
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 3.3rem;
 }
-.navbar .logo {
-  margin: auto;
+.follow-text {
+  font-size: 1.2rem;
+}
+
+  .navbar .logo {
+    margin: 0;
+  }
+
+.community-link,
+.blog-link {
+  font-size: 1.2rem;
+}
+
+.community-link img,
+.blog-link img {
+  width: 50px;
+  height: 50px;
+}
+.social-icons a {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #000000;
 }
 
-footer {
-  font-size: 1.05rem;
-}
+
 
 }
