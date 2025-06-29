@@ -1,10 +1,23 @@
 
-
-html {
-    background-color: #eeeeee;
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+section {
+  flex: 1;
+}
+
+
+/* body {
+  
     display: flex;
     flex-direction: column;
     background-color: #eeeeee;
@@ -17,7 +30,7 @@ body {
     padding: 0;
     min-height: 100vh;
     height: 100%;
-}
+} */
  h1, h2, h3 {
     font-weight: 700;
   }
@@ -116,9 +129,10 @@ header .pfp {
 
 
 .table {
-    display: flex;
-    justify-content: left;
-    padding: 0 3rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  padding: 0 3rem;
 }
 thead {
   font-size: 0.7rem;
