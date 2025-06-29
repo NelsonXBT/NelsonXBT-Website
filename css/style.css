@@ -8,7 +8,8 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #eeeeee;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
     font-size: 10px;
     text-align: center;
     overflow-x: hidden;
@@ -17,12 +18,19 @@ body {
     min-height: 100vh;
     height: 100%;
 }
-
-
+ h1, h2, h3 {
+    font-weight: 700;
+  }
 header {
+   text-align: left;
     font-size: 1rem;
 }
+header h1 {
+    padding: 0 3rem;
+    font-size: 1.8rem;
+}
 header p {
+  font-style: oblique;
     padding: 0 3rem;
 }
 /* Navbar base */
@@ -80,31 +88,87 @@ header .pfp {
     margin: 0% auto;
     
 }
-.social-icons {
-    font-size: 1.7rem;
+.social-follow {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+  justify-content: left;
+  margin-top: 20px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 3rem 2rem 3.2rem;
 }
 
-.community {
-    margin-top: 3rem;
-    font-size: 1rem;
-    
+.social-icons a {
+  margin: 0 5px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
 }
+
+
+/* .community {
+    margin-top: 3rem;
+    font-size: 3rem;
+    
+} */
+
 
 .table {
     display: flex;
-    justify-content: center;
+    justify-content: left;
+    padding: 0 3rem;
 }
+thead {
+  font-size: 0.7rem;
+}
+.table1 {
+  font-size: 0.6rem;
+}
+tr td{
+  padding: 0.2rem 1rem 0.2rem 0.4rem;
+}
+.community-link,
+.blog-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.83rem;
+  font-weight: 600;
+  color: black;
+  padding: 0.5rem 0;
+}
+
+.community-link img,
+.blog-link img {
+  width: 30px;
+  height: 30px;
+}
+
+.community-link:hover,
+.blog-link:hover {
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
 button {
-    background-color: #005a32;
-    color: white;
-    font-size: 1.2rem;
+    background-color: #fcf8f8;
+    color: rgb(12, 0, 0);
+    font-size: 0.7rem;
+    font-weight: bold;
     border: 0.2rem solid #005a32;
     border-radius: 0.3rem;
     margin-bottom: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.5rem;
+}
+.activeButton {
+  padding: 0.1rem 0rem;
 }
 button:hover {
-    background-color: #006d4c;
+    background-color: #eeeeee;
     border: 0.2rem solid #006d4c;
 }
 .section {
@@ -162,6 +226,9 @@ button:hover {
 @keyframes blink {
   50% { border-color: transparent }
 }
+
+
+
 
 footer {
   background-color: rgb(2, 32, 20) ;
