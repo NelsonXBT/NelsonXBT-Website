@@ -1,0 +1,186 @@
+/* =========================================================
+   PAYMENT — a checkout, so chrome stays minimal and the
+   numbers stay unambiguous.
+========================================================= */
+
+.header {
+  border-bottom: 1px solid var(--line);
+}
+
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 68px;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 0.8125rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.back:hover {
+  color: var(--bone);
+}
+
+.main {
+  padding-block: clamp(34px, 6vw, 60px) clamp(48px, 7vw, 80px);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.title {
+  font-size: clamp(2.125rem, 9vw, 3rem);
+}
+
+.cohort {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.price {
+  margin-top: clamp(24px, 4vw, 32px);
+  padding-block: clamp(20px, 3.4vw, 26px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.priceLabel {
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.priceValue {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 7.5vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--bone);
+  font-variant-numeric: tabular-nums;
+}
+
+.priceValue span {
+  font-size: 0.44em;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-left: 8px;
+}
+
+/* -----------------------------------------------------
+   STEPS
+----------------------------------------------------- */
+
+.steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 0 14px;
+  padding-block: clamp(24px, 4vw, 32px);
+}
+
+.step + .step {
+  border-top: 1px solid var(--line);
+}
+
+.stepNumber {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  margin-top: 2px;
+  border: 1px solid var(--line-strong);
+  border-radius: 50%;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.stepTitle {
+  font-size: clamp(1.125rem, 4.6vw, 1.3125rem);
+}
+
+.stepBody {
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.stepBody strong {
+  color: var(--bone);
+  font-weight: 500;
+}
+
+.address {
+  margin-top: 18px;
+}
+
+.confirm {
+  margin-top: 18px;
+}
+
+/* -----------------------------------------------------
+   WARNING
+----------------------------------------------------- */
+
+.warning {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 12px;
+  padding: 16px 18px;
+  border: 1px solid var(--accent-soft);
+  border-radius: 3px;
+  background: rgba(215, 178, 126, 0.05);
+}
+
+.warningIcon {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  font-size: 0.6875rem;
+  color: var(--accent);
+}
+
+.warningText {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.warningText strong {
+  color: var(--bone);
+  font-weight: 500;
+}
+
+@media (min-width: 640px) {
+  .headerInner {
+    min-height: 84px;
+  }
+}

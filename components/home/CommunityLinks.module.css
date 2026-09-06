@@ -1,0 +1,60 @@
+/* =========================================================
+   COMMUNITY
+   Present and obvious, but deliberately not a destination card.
+========================================================= */
+
+.section {
+  padding-block: clamp(26px, 4vw, 36px);
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 44px;
+  min-width: 44px;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  color: var(--bone);
+  border-bottom: 1px solid transparent;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.link:hover {
+  border-bottom-color: var(--accent);
+}
+
+.mark {
+  font-family: var(--font-sans-stack);
+  font-size: 0.6875rem;
+  color: var(--muted);
+}
+
+.dot {
+  color: var(--faint);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 620px) {
+  .row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+}

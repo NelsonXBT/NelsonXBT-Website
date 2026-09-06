@@ -1,0 +1,83 @@
+.box {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--bg-raise);
+}
+
+.row {
+  padding: 16px 18px;
+}
+
+.row + .row {
+  border-top: 1px solid var(--line);
+}
+
+.label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.625rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.network {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--bone);
+}
+
+.walletRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.wallet {
+  min-width: 0;
+  flex: 1;
+}
+
+.address {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    monospace;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bone);
+  /* The full address must stay readable on a phone. */
+  word-break: break-all;
+}
+
+.copy {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  /* 44px tap target — this is the one control on a payment page. */
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.copy:hover {
+  border-color: var(--accent);
+  color: var(--bone);
+}
+
+.copied {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(215, 178, 126, 0.08);
+}

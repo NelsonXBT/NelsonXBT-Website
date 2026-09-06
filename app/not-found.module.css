@@ -1,0 +1,35 @@
+.main {
+  display: grid;
+  place-items: center;
+  min-height: 62vh;
+  padding-block: clamp(56px, 10vw, 120px);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.code {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.title {
+  font-size: clamp(2rem, 8vw, 2.75rem);
+}
+
+.body {
+  max-width: 40ch;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.cta {
+  margin-top: 8px;
+}

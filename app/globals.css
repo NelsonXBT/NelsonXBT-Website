@@ -1,0 +1,148 @@
+/* =========================================================
+   NELSONXBT — FOUNDATION
+   Tokens, reset and base typography only.
+   All component styling lives in colocated CSS Modules.
+========================================================= */
+
+:root {
+  color-scheme: dark;
+
+  /* Surfaces */
+  --bg: #0a0a0a;
+  --bg-raise: #101010;
+  --bg-sink: #070707;
+
+  /* Ink */
+  --bone: #f4f0e8;
+  --text: #e9e5dd;
+  --muted: #9a948a;
+  --faint: #6c675f;
+
+  /* Lines */
+  --line: rgba(244, 240, 232, 0.1);
+  --line-strong: rgba(244, 240, 232, 0.2);
+
+  /* Accent — warm gold. Used sparingly, never as decoration. */
+  --accent: #d7b27e;
+  --accent-soft: rgba(215, 178, 126, 0.32);
+
+  /*
+    Type — one family, sitewide. The var() fallback keeps the stack valid
+    if the webfont fails to load. Display weight is used for headings and
+    for the few places that need to read as a title rather than as prose.
+  */
+  --font-sans-stack: var(--font-sans, "Inter"), ui-sans-serif, system-ui,
+    -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: var(--font-sans-stack);
+  --fw-display: 500;
+
+  --fs-eyebrow: 0.6875rem;
+  --ls-eyebrow: 0.2em;
+
+  /* Layout */
+  --maxw: 1240px;
+  --maxw-wide: 1680px;
+  --maxw-narrow: 660px;
+  --gutter: clamp(20px, 5vw, 64px);
+
+  /* Rhythm */
+  --section-y: clamp(52px, 7vw, 96px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans-stack);
+  font-size: 1rem;
+  line-height: 1.6;
+  font-synthesis-weight: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Nothing on the site scrolls sideways. */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-display);
+  line-height: 1.08;
+  /* Tightens as size grows; large sans headings need the negative tracking. */
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--bone);
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+svg,
+iframe {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--bone);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Screen-reader-only, for skip links and redundant labels. */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

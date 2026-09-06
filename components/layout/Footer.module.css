@@ -1,0 +1,104 @@
+.footer {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(36px, 5vw, 56px) clamp(28px, 4vw, 40px);
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  /* Negative inline margin cancels the links' own padding so the row
+     still aligns flush with the wordmark above it. */
+  margin-inline: -2px;
+  gap: 0 22px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  /* 44px tap target; padding widens the narrow ones (e.g. "X"). */
+  min-height: 44px;
+  min-width: 44px;
+  padding-inline: 2px;
+  font-size: 0.875rem;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: var(--bone);
+}
+
+.mark {
+  font-size: 0.6875rem;
+  opacity: 0.5;
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px 24px;
+  margin-top: clamp(28px, 4vw, 40px);
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-eyebrow);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.legal {
+  display: flex;
+  /* Cancels the links' padding so the row ends flush with the container. */
+  margin-inline: -8px;
+}
+
+.legalLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  justify-content: center;
+  padding-inline: 8px;
+  /* Inherits the row's small caps; only the colour separates it. */
+  color: var(--faint);
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: var(--muted);
+}
+
+@media (min-width: 720px) {
+  .top {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  .links {
+    justify-content: flex-end;
+  }
+}

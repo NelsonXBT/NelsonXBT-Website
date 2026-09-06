@@ -1,0 +1,77 @@
+/* =========================================================
+   CONTACT — short statement, what I am open to, how to reach me.
+========================================================= */
+
+.main {
+  padding-block: clamp(34px, 6vw, 64px) clamp(48px, 7vw, 88px);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: clamp(14px, 2.6vw, 18px);
+  max-width: 22ch;
+}
+
+.title {
+  font-size: clamp(2rem, 8vw, 2.875rem);
+}
+
+.lead {
+  max-width: 46ch;
+  font-size: clamp(0.9375rem, 3.6vw, 1.0625rem);
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(36px, 6vw, 48px);
+  margin-top: clamp(36px, 6vw, 60px);
+  padding-top: clamp(30px, 5vw, 44px);
+  border-top: 1px solid var(--line);
+}
+
+.blockTitle {
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-bottom: 14px;
+}
+
+.closing {
+  align-self: start;
+}
+
+.closingBody {
+  max-width: 38ch;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 28px;
+  margin-top: 22px;
+}
+
+@media (min-width: 880px) {
+  .head {
+    max-width: none;
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: clamp(48px, 7vw, 96px);
+  }
+
+  .lead {
+    font-size: 1.0625rem;
+  }
+}

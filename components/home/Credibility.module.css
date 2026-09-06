@@ -1,0 +1,75 @@
+/* =========================================================
+   CREDIBILITY
+   A masthead-style band, not a statistics dashboard.
+   No cards, no icons, no borders around items.
+========================================================= */
+
+.band {
+  border-bottom: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: 0;
+}
+
+.item {
+  padding-block: clamp(18px, 3.6vw, 26px);
+}
+
+.item + .item {
+  border-top: 1px solid var(--line);
+}
+
+.label {
+  margin: 0 0 8px;
+  font-size: 0.625rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+
+.value {
+  margin: 0;
+  font-size: clamp(1rem, 4vw, 1.125rem);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.012em;
+  color: var(--bone);
+}
+
+/* Sits on its own line on wide screens; inline on a phone to stay compact. */
+.trail {
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.trail::before {
+  content: " ";
+}
+
+@media (min-width: 760px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(28px, 5vw, 72px);
+  }
+
+  .item {
+    padding-block: clamp(34px, 4.6vw, 52px);
+  }
+
+  .item + .item {
+    border-top: 0;
+  }
+
+  .trail {
+    display: block;
+    max-width: 22ch;
+  }
+
+  .trail::before {
+    content: none;
+  }
+}

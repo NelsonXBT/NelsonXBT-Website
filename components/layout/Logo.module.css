@@ -1,0 +1,39 @@
+.logo {
+  /* Inline-flex with a min-height keeps the tap target at 44px while the
+     wordmark itself stays small. */
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  /* Wide tracking is what makes a sans wordmark read as a mark. */
+  letter-spacing: 0.14em;
+  line-height: 1;
+  color: var(--bone);
+  white-space: nowrap;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+/* Navbar and payment header. */
+.sm {
+  font-size: 1rem;
+}
+
+/* Footer, where the wordmark is the only brand element on the row. */
+.md {
+  font-size: 1.1875rem;
+}
+
+@media (min-width: 640px) {
+  .sm {
+    font-size: 1.0625rem;
+  }
+
+  .md {
+    font-size: 1.3125rem;
+  }
+}

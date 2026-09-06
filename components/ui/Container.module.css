@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* Reading width, for the payment flow. Compounded with .container. */
+.container.narrow {
+  max-width: var(--maxw-narrow);
+}

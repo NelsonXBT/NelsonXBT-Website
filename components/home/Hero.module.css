@@ -1,0 +1,145 @@
+/* =========================================================
+   HERO
+   Mobile: portrait first, cropped tight and feathered into the
+   page, then the type. Desktop: type column on the container
+   grid, portrait beside it running to the full section height.
+========================================================= */
+
+.hero {
+  position: relative;
+  border-bottom: 1px solid var(--line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* -----------------------------------------------------
+   COPY
+----------------------------------------------------- */
+
+.copy {
+  padding-inline: var(--gutter);
+  padding-block: clamp(26px, 6vw, 40px) clamp(34px, 7vw, 48px);
+  max-width: 640px;
+}
+
+.headline {
+  margin-top: clamp(16px, 3vw, 22px);
+  font-size: clamp(2.125rem, 8.6vw, 3rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+}
+
+.intro {
+  margin-top: clamp(16px, 3vw, 22px);
+  max-width: 42ch;
+  font-size: clamp(0.9375rem, 3.4vw, 1rem);
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+/* -----------------------------------------------------
+   PORTRAIT
+   A wide crop on mobile: keeps the face large without
+   spending half the first screen on a square.
+----------------------------------------------------- */
+
+.media {
+  position: relative;
+  order: -1;
+  aspect-ratio: 3 / 2;
+  max-height: 46vh;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Holds the face in frame as the crop narrows. */
+  object-position: 50% 16%;
+  /* Cools and settles the studio backdrop into the dark page. */
+  filter: saturate(0.8) contrast(1.05) brightness(0.88);
+}
+
+/* Feathers the photograph into the page instead of framing it. */
+.veil {
+  position: absolute;
+  inset: 0;
+  /*
+    Both the top and bottom edges start at full --bg so the photograph
+    dissolves into the page rather than butting against the navbar as a
+    visible horizontal seam. The radial darkens the studio corners.
+  */
+  background:
+    linear-gradient(to top, var(--bg) 0%, rgba(10, 10, 10, 0) 34%),
+    linear-gradient(to bottom, var(--bg) 0%, rgba(10, 10, 10, 0) 22%),
+    radial-gradient(
+      130% 110% at 50% 26%,
+      rgba(10, 10, 10, 0) 30%,
+      rgba(10, 10, 10, 0.55) 100%
+    );
+}
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 900px) {
+  .hero {
+    /*
+      The type column lands exactly on the Container's content edge, so
+      the headline aligns with the navbar wordmark. The right side runs
+      out to the viewport, capped on very wide screens.
+    */
+    padding-left: max(
+      var(--gutter),
+      calc((100% - var(--maxw)) / 2 + var(--gutter))
+    );
+    padding-right: max(0px, calc((100% - var(--maxw-wide)) / 2));
+  }
+
+  .grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    align-items: center;
+    min-height: clamp(500px, 72vh, 660px);
+  }
+
+  .copy {
+    padding-inline: 0 clamp(32px, 4vw, 72px);
+    padding-block: clamp(56px, 7vw, 88px);
+    max-width: none;
+  }
+
+  .headline {
+    font-size: clamp(2.75rem, 4.4vw, 4rem);
+    letter-spacing: -0.035em;
+    max-width: 15ch;
+  }
+
+  .media {
+    order: 0;
+    align-self: stretch;
+    aspect-ratio: auto;
+    max-height: none;
+    height: 100%;
+  }
+
+  .image {
+    object-position: 50% 14%;
+  }
+
+  .veil {
+    background:
+      linear-gradient(to top, var(--bg) 0%, rgba(10, 10, 10, 0) 22%),
+      linear-gradient(to bottom, var(--bg) 0%, rgba(10, 10, 10, 0) 18%),
+      linear-gradient(to right, var(--bg) 0%, rgba(10, 10, 10, 0) 28%),
+      radial-gradient(
+        120% 100% at 62% 30%,
+        rgba(10, 10, 10, 0) 34%,
+        rgba(10, 10, 10, 0.5) 100%
+      );
+  }
+}

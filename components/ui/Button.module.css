@@ -1,0 +1,87 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.arrow {
+  transition: transform 0.2s ease;
+}
+
+.base:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* -----------------------------------------------------
+   Primary — the one filled action per page.
+----------------------------------------------------- */
+
+.primary {
+  padding: 15px 26px;
+  min-height: 50px;
+  border-radius: 2px;
+  background: var(--bone);
+  color: #0a0a0a;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+}
+
+.primary:hover {
+  background: #fffdf8;
+}
+
+/* -----------------------------------------------------
+   Secondary — quiet text action with a rule.
+----------------------------------------------------- */
+
+.secondary {
+  min-height: 44px;
+  /* Width floor for very short labels — "X" alone would fall under 44px. */
+  min-width: 44px;
+  padding: 12px 2px 10px;
+  color: var(--bone);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-bottom: 1px solid var(--line-strong);
+  border-radius: 0;
+}
+
+.secondary:hover {
+  border-bottom-color: var(--accent);
+  color: #fffdf8;
+}
+
+/* -----------------------------------------------------
+   Outline — used where a bordered action reads better
+   than a filled one (payment confirmation).
+----------------------------------------------------- */
+
+.outline {
+  padding: 15px 26px;
+  min-height: 50px;
+  border-radius: 2px;
+  border-color: var(--line-strong);
+  color: var(--bone);
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.outline:hover {
+  border-color: var(--accent);
+  background: rgba(215, 178, 126, 0.06);
+}
+
+.full {
+  display: flex;
+  width: 100%;
+}

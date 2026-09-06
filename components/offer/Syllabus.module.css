@@ -1,0 +1,78 @@
+/* =========================================================
+   SYLLABUS — a numbered outline. Shared by /workshop and /1-on-1.
+========================================================= */
+
+.section {
+  padding-block: var(--section-y);
+  border-bottom: 1px solid var(--line);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 640px;
+}
+
+.title {
+  font-size: clamp(1.75rem, 6.6vw, 2.25rem);
+}
+
+.intro {
+  font-size: clamp(0.9375rem, 3.4vw, 1.0625rem);
+  line-height: 1.62;
+  color: var(--muted);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin: clamp(30px, 5vw, 48px) 0 0;
+  padding: 0;
+  list-style: none;
+  gap: 0 clamp(40px, 6vw, 80px);
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 0 16px;
+  padding-block: clamp(20px, 3.4vw, 26px);
+  border-top: 1px solid var(--line);
+}
+
+.number {
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 2;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  font-variant-numeric: tabular-nums;
+}
+
+.itemTitle {
+  font-size: clamp(1.0625rem, 4.2vw, 1.1875rem);
+  line-height: 1.32;
+  letter-spacing: -0.015em;
+}
+
+.itemBody {
+  margin-top: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@media (min-width: 860px) {
+  .list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .item {
+    grid-template-columns: 40px minmax(0, 1fr);
+  }
+
+  .itemTitle {
+    font-size: 1.125rem;
+  }
+}
