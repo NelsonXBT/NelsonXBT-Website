@@ -10,8 +10,8 @@ type LogoProps = {
 };
 
 /**
- * The NELSONXBT wordmark. Single source for the mark used in the
- * navbar, footer and payment header.
+ * The NELSONXBT wordmark. One weight, one colour — a mark reads as a mark
+ * because of its letterform and tracking, not because half of it is tinted.
  */
 export default function Logo({
   size = "sm",
@@ -22,19 +22,17 @@ export default function Logo({
     .filter(Boolean)
     .join(" ");
 
-  const mark = (
-    <>
-      Nelson<span className={styles.accent}>XBT</span>
-    </>
-  );
-
   if (asText) {
-    return <span className={classes}>{mark}</span>;
+    return <span className={classes}>{site.name}</span>;
   }
 
   return (
-    <Link className={classes} href={routes.home} aria-label={`${site.name} — home`}>
-      {mark}
+    <Link
+      className={classes}
+      href={routes.home}
+      aria-label={`${site.name} — home`}
+    >
+      {site.name}
     </Link>
   );
 }

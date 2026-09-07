@@ -1,4 +1,4 @@
-import { external, site } from "@/content/site";
+import { email, site } from "@/content/site";
 
 /**
  * Terms and privacy. Written to describe what this site actually does —
@@ -12,7 +12,7 @@ export const legalUpdated = "September 2026";
 export const terms = {
   eyebrow: "Legal",
   title: "Terms of Service",
-  lead: `The terms below apply to the ${site.name} website and to the services sold through it — the Crypto Clarity Workshop and 1-on-1 private coaching.`,
+  lead: `The terms below apply to the ${site.name} website and to the services sold through it — the Crypto Clarity Workshop and private coaching.`,
   sections: [
     {
       heading: "Education, not financial advice",
@@ -72,8 +72,8 @@ export const terms = {
   contact: {
     heading: "Questions",
     body: "If anything here is unclear before you pay, ask first.",
-    cta: "Message on Telegram",
-    href: external.telegramDirect,
+    cta: `Email ${email.address}`,
+    href: email.href,
   },
 } as const;
 
@@ -98,14 +98,14 @@ export const privacy = {
     {
       heading: "The embedded video",
       body: [
-        "The workshop and coaching pages show a video. It loads as a still image, and nothing is requested from YouTube until you press play. Once you do, YouTube receives the request and may set cookies and collect data under its own privacy policy — including your IP address and details about your device.",
-        "The embed uses YouTube's no-cookie domain, which limits what is set before playback, but it does not eliminate it. If you would rather not share anything with YouTube, don't press play.",
+        "The workshop and coaching pages show a video. It loads as a still image held on this site, and nothing is requested from the video host until you press play. Until then, the host knows nothing about your visit.",
+        "Once you press play, the player loads from the host — currently Bunny Stream — which receives the request and may collect technical data under its own privacy policy, including your IP address and details about your device. If a video is ever served from YouTube instead, the same applies to YouTube. If you would rather not share anything with a video host, don't press play.",
       ],
     },
     {
       heading: "When you get in touch",
       body: [
-        "Conversations happen on Telegram, so Telegram handles those messages under its own privacy policy — I have no more access to them than any other person you message.",
+        `Business enquiries reach me by email at ${email.address}, so my email provider handles those messages under its own privacy policy. Payment confirmations happen on Telegram, and Telegram handles those under its own policy — I have no more access to them than any other person you message.`,
         "When you buy something, I keep what I need to deliver it and to keep my own records: your Telegram handle, the transaction hash or payment screenshot you send, which service you bought, and anything you tell me about what you want to work on. I keep this only as long as I need it for the service and for record-keeping.",
       ],
     },
@@ -119,7 +119,7 @@ export const privacy = {
     {
       heading: "Sharing",
       body: [
-        "I don't sell your information, and I don't share it for advertising. The only parties involved are the ones described above — the host that serves the site, YouTube if you play the video, and Telegram if you message me.",
+        "I don't sell your information, and I don't share it for advertising. The only parties involved are the ones described above — the host that serves the site, the video host if you press play, my email provider if you write to me, and Telegram if you send a payment confirmation.",
       ],
     },
     {
@@ -138,7 +138,7 @@ export const privacy = {
   contact: {
     heading: "Questions",
     body: "Ask me anything about this and I will answer plainly.",
-    cta: "Message on Telegram",
-    href: external.telegramDirect,
+    cta: `Email ${email.address}`,
+    href: email.href,
   },
 } as const;

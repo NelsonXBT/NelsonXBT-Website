@@ -7,10 +7,26 @@
 
 .hero {
   position: relative;
-  border-bottom: 1px solid var(--line);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+/* A warm bloom behind the type column, so the first screen is lit from
+   the same direction as the portrait rather than sitting on flat black. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    78% 68% at 6% 12%,
+    rgba(215, 178, 126, 0.085) 0%,
+    rgba(215, 178, 126, 0) 62%
+  );
 }
 
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
 }
@@ -21,22 +37,29 @@
 
 .copy {
   padding-inline: var(--gutter);
-  padding-block: clamp(26px, 6vw, 40px) clamp(34px, 7vw, 48px);
+  padding-block: clamp(20px, 4.6vw, 32px) clamp(28px, 5.4vw, 40px);
   max-width: 640px;
+  animation: rise 0.55s ease-out both;
 }
 
 .headline {
-  margin-top: clamp(16px, 3vw, 22px);
-  font-size: clamp(2.125rem, 8.6vw, 3rem);
-  line-height: 1.06;
+  margin-top: clamp(12px, 2.4vw, 18px);
+  font-size: clamp(2rem, 8.2vw, 2.875rem);
+  line-height: 1.05;
   letter-spacing: -0.03em;
 }
 
+/* With no eyebrow above it the headline leads the column, and its top
+   margin would only double the padding it already sits inside. */
+.headline:first-child {
+  margin-top: 0;
+}
+
 .intro {
-  margin-top: clamp(16px, 3vw, 22px);
+  margin-top: clamp(12px, 2.4vw, 18px);
   max-width: 42ch;
   font-size: clamp(0.9375rem, 3.4vw, 1rem);
-  line-height: 1.62;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -50,7 +73,7 @@
   position: relative;
   order: -1;
   aspect-ratio: 3 / 2;
-  max-height: 46vh;
+  max-height: 40vh;
   overflow: hidden;
 }
 
@@ -74,12 +97,12 @@
     visible horizontal seam. The radial darkens the studio corners.
   */
   background:
-    linear-gradient(to top, var(--bg) 0%, rgba(10, 10, 10, 0) 34%),
-    linear-gradient(to bottom, var(--bg) 0%, rgba(10, 10, 10, 0) 22%),
+    linear-gradient(to top, var(--bg) 0%, rgba(11, 10, 9, 0) 34%),
+    linear-gradient(to bottom, var(--bg) 0%, rgba(11, 10, 9, 0) 22%),
     radial-gradient(
       130% 110% at 50% 26%,
-      rgba(10, 10, 10, 0) 30%,
-      rgba(10, 10, 10, 0.55) 100%
+      rgba(11, 10, 9, 0) 30%,
+      rgba(11, 10, 9, 0.55) 100%
     );
 }
 
@@ -104,17 +127,17 @@
   .grid {
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
     align-items: center;
-    min-height: clamp(500px, 72vh, 660px);
+    min-height: clamp(420px, 62vh, 560px);
   }
 
   .copy {
-    padding-inline: 0 clamp(32px, 4vw, 72px);
-    padding-block: clamp(56px, 7vw, 88px);
+    padding-inline: 0 clamp(28px, 3.4vw, 60px);
+    padding-block: clamp(40px, 5vw, 64px);
     max-width: none;
   }
 
   .headline {
-    font-size: clamp(2.75rem, 4.4vw, 4rem);
+    font-size: clamp(2.5rem, 4vw, 3.625rem);
     letter-spacing: -0.035em;
     max-width: 15ch;
   }
@@ -133,13 +156,13 @@
 
   .veil {
     background:
-      linear-gradient(to top, var(--bg) 0%, rgba(10, 10, 10, 0) 22%),
-      linear-gradient(to bottom, var(--bg) 0%, rgba(10, 10, 10, 0) 18%),
-      linear-gradient(to right, var(--bg) 0%, rgba(10, 10, 10, 0) 28%),
+      linear-gradient(to top, var(--bg) 0%, rgba(11, 10, 9, 0) 22%),
+      linear-gradient(to bottom, var(--bg) 0%, rgba(11, 10, 9, 0) 18%),
+      linear-gradient(to right, var(--bg) 0%, rgba(11, 10, 9, 0) 28%),
       radial-gradient(
         120% 100% at 62% 30%,
-        rgba(10, 10, 10, 0) 34%,
-        rgba(10, 10, 10, 0.5) 100%
+        rgba(11, 10, 9, 0) 34%,
+        rgba(11, 10, 9, 0.5) 100%
       );
   }
 }

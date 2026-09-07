@@ -16,7 +16,7 @@ import {
 } from "@/content/session";
 
 export const metadata: Metadata = {
-  title: "Book a 1-on-1 Session",
+  title: "Private Coaching",
   description: `${sessionCoverage.intro} ${oneOnOne.price.amount} ${oneOnOne.price.currency} for three sessions with Nelson Edeh.`,
   alternates: { canonical: routes.session },
 };
@@ -28,7 +28,6 @@ export default function SessionPage() {
 
       <main>
         <OfferHero
-          eyebrow={oneOnOne.eyebrow}
           title={oneOnOne.title}
           with={oneOnOne.with}
           meta={oneOnOne.format}

@@ -9,8 +9,8 @@ import { confirmStep, wallet } from "@/content/payment";
 import styles from "./Checkout.module.css";
 
 type CheckoutProps = {
-  /** Small caps line above the title — which offer is being paid for. */
-  eyebrow: string;
+  /** Optional small caps line above the title — which offer is being paid for. */
+  eyebrow?: string;
   title: string;
   /** One line of terms under the title: a cohort date, or the format. */
   detail: string;
@@ -51,7 +51,7 @@ export default function Checkout({
       <main className={styles.main}>
         <Container narrow>
           <div className={styles.head}>
-            <Eyebrow rule>{eyebrow}</Eyebrow>
+            {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
             <h1 className={styles.title}>{title}</h1>
             <p className={styles.cohort}>{detail}</p>
           </div>
@@ -98,7 +98,6 @@ export default function Checkout({
                     href={wallet.telegramHref}
                     variant="outline"
                     external
-                    arrow
                   >
                     {wallet.telegramCta}
                   </Button>

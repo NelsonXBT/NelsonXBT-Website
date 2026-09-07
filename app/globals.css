@@ -7,10 +7,16 @@
 :root {
   color-scheme: dark;
 
-  /* Surfaces */
-  --bg: #0a0a0a;
-  --bg-raise: #101010;
-  --bg-sink: #070707;
+  /*
+    Surfaces — four steps, not one. Adjacent sections alternate between
+    them so the page reads as stacked planes rather than one flat field.
+    The steps are close together on purpose and carry a trace of warmth
+    as they rise: the depth should be felt, not seen as banding.
+  */
+  --bg: #0b0a09;
+  --bg-raise: #121110;
+  --bg-lift: #171614;
+  --bg-sink: #060605;
 
   /* Ink */
   --bone: #f4f0e8;
@@ -19,12 +25,46 @@
   --faint: #6c675f;
 
   /* Lines */
-  --line: rgba(244, 240, 232, 0.1);
+  --line: rgba(244, 240, 232, 0.09);
   --line-strong: rgba(244, 240, 232, 0.2);
 
-  /* Accent — warm gold. Used sparingly, never as decoration. */
+  /*
+    A divider that carries a trace of gold at its start and fades out,
+    so the seam between two sections has direction instead of being a
+    uniform grey rule. Applied as a 1px band on a section's top edge.
+  */
+  --seam: linear-gradient(
+    to right,
+    rgba(215, 178, 126, 0.4) 0%,
+    rgba(244, 240, 232, 0.11) 22%,
+    rgba(244, 240, 232, 0.05) 62%,
+    rgba(244, 240, 232, 0) 100%
+  );
+
+  /* Accent — warm gold. Carries the primary actions. */
   --accent: #d7b27e;
+  --accent-bright: #e6c592;
+  --accent-deep: #b8925d;
   --accent-soft: rgba(215, 178, 126, 0.32);
+  --accent-wash: rgba(215, 178, 126, 0.07);
+  /* Ink for text sitting on a gold fill. */
+  --on-accent: #17120a;
+
+  /*
+    Blooms — soft warm light dropped behind a section's upper edge so a
+    dark plane reads as lit rather than as empty. Two strengths: `bloom`
+    for ordinary sections, `bloom-strong` for the ones carrying a price.
+  */
+  --bloom: radial-gradient(
+    68% 100% at 14% 0%,
+    rgba(215, 178, 126, 0.055) 0%,
+    rgba(215, 178, 126, 0) 70%
+  );
+  --bloom-strong: radial-gradient(
+    72% 100% at 16% 0%,
+    rgba(215, 178, 126, 0.1) 0%,
+    rgba(215, 178, 126, 0) 68%
+  );
 
   /*
     Type — one family, sitewide. The var() fallback keeps the stack valid
@@ -40,13 +80,17 @@
   --ls-eyebrow: 0.2em;
 
   /* Layout */
-  --maxw: 1240px;
-  --maxw-wide: 1680px;
-  --maxw-narrow: 660px;
-  --gutter: clamp(20px, 5vw, 64px);
+  --maxw: 1200px;
+  --maxw-wide: 1620px;
+  --maxw-narrow: 640px;
+  --gutter: clamp(18px, 4.4vw, 52px);
 
-  /* Rhythm */
-  --section-y: clamp(52px, 7vw, 96px);
+  /*
+    Rhythm — deliberately tight. Sections earn separation from their
+    surface and seam, so they don't also need large empty margins.
+  */
+  --section-y: clamp(34px, 4.4vw, 56px);
+  --section-y-lg: clamp(42px, 5.2vw, 68px);
 }
 
 *,
@@ -125,11 +169,28 @@ button {
   color: var(--bone);
 }
 
+/*
+  One shared entrance. Used only on the first screen of a page, where it
+  reads as the page settling rather than as decoration.
+*/
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }

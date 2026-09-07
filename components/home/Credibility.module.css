@@ -1,11 +1,23 @@
 /* =========================================================
    CREDIBILITY
    A masthead-style band, not a statistics dashboard.
-   No cards, no icons, no borders around items.
+   No cards, no icons, no borders around items — the raised
+   surface is what separates it from the hero above.
 ========================================================= */
 
 .band {
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  background: var(--bg-raise);
+}
+
+/* The seam owns the top edge, so the band reads as a plane laid over
+   the hero rather than a section divided off by a grey rule. */
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: var(--seam);
 }
 
 .grid {
@@ -15,7 +27,8 @@
 }
 
 .item {
-  padding-block: clamp(18px, 3.6vw, 26px);
+  position: relative;
+  padding-block: clamp(14px, 2.8vw, 20px);
 }
 
 .item + .item {
@@ -23,11 +36,12 @@
 }
 
 .label {
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   font-size: 0.625rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--faint);
+  color: var(--accent);
+  opacity: 0.72;
 }
 
 .value {
@@ -53,15 +67,26 @@
 @media (min-width: 760px) {
   .grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: clamp(28px, 5vw, 72px);
+    gap: clamp(24px, 4vw, 56px);
   }
 
   .item {
-    padding-block: clamp(34px, 4.6vw, 52px);
+    padding-block: clamp(24px, 3.4vw, 36px);
   }
 
   .item + .item {
     border-top: 0;
+  }
+
+  /* A hairline between columns, centred in the gutter. */
+  .item + .item::before {
+    content: "";
+    position: absolute;
+    top: clamp(24px, 3.4vw, 36px);
+    bottom: clamp(24px, 3.4vw, 36px);
+    left: calc(clamp(24px, 4vw, 56px) / -2);
+    width: 1px;
+    background: var(--line);
   }
 
   .trail {

@@ -24,7 +24,7 @@ export default function NotFound() {
               The link may be out of date, or the page may have moved.
             </p>
 
-            <Button href={routes.home} variant="secondary" arrow className={styles.cta}>
+            <Button href={routes.home} variant="secondary" className={styles.cta}>
               Back to homepage
             </Button>
           </div>

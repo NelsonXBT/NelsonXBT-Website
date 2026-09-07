@@ -6,7 +6,7 @@ import { routes } from "@/content/site";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description:
-    "Terms for the NelsonXBT website and its services — the Crypto Clarity Workshop and 1-on-1 coaching. Education only, not financial advice.",
+    "Terms for the NelsonXBT website and its services — the Crypto Clarity Workshop and private coaching. Education only, not financial advice.",
   alternates: { canonical: routes.terms },
 };
 

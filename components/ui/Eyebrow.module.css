@@ -1,18 +1,10 @@
 .eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   margin: 0;
   font-size: var(--fs-eyebrow);
+  font-weight: 500;
   letter-spacing: var(--ls-eyebrow);
   text-transform: uppercase;
   line-height: 1.4;
-  color: var(--muted);
-}
-
-.rule {
-  flex: none;
-  width: 28px;
-  height: 1px;
-  background: var(--accent);
+  /* Gold at low weight is the accent here, in place of a leading rule. */
+  color: var(--accent);
 }

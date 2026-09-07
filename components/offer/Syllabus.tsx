@@ -27,7 +27,7 @@ export default function Syllabus({
 }: SyllabusProps) {
   return (
     <section className={styles.section} aria-labelledby={id}>
-      <Container>
+      <Container className={styles.inner}>
         <div className={styles.head}>
           <h2 className={styles.title} id={id}>
             {title}

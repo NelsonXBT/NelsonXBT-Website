@@ -3,10 +3,11 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import OfferHero from "@/components/offer/OfferHero";
 import OfferVideo from "@/components/offer/OfferVideo";
+import KeyDates from "@/components/offer/KeyDates";
 import Syllabus from "@/components/offer/Syllabus";
 import Reserve from "@/components/offer/Reserve";
 import { routes } from "@/content/site";
-import { coverage, reserve, topics, workshop } from "@/content/workshop";
+import { coverage, keyDates, reserve, topics, workshop } from "@/content/workshop";
 
 export const metadata: Metadata = {
   title: "Crypto Clarity Workshop",
@@ -21,10 +22,16 @@ export default function WorkshopPage() {
 
       <main>
         <OfferHero
-          eyebrow={workshop.eyebrow}
           title={workshop.title}
           with={workshop.with}
           meta={workshop.cohortCaps}
+          footer={
+            <KeyDates
+              items={keyDates.items}
+              cta={keyDates.cta}
+              href={workshop.reserveHref}
+            />
+          }
         >
           <OfferVideo video={workshop.video} />
         </OfferHero>

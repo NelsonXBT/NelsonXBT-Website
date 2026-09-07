@@ -12,7 +12,6 @@ export const metadata: Metadata = {
 export default function WorkshopPaymentPage() {
   return (
     <Checkout
-      eyebrow={workshop.eyebrow}
       title="Reserve Your Seat"
       detail={workshop.cohortDash}
       price={workshop.price}

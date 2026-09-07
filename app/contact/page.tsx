@@ -24,7 +24,7 @@ export default function ContactPage() {
       <main className={styles.main}>
         <Container>
           <div className={styles.head}>
-            <Eyebrow rule>{contact.eyebrow}</Eyebrow>
+            <Eyebrow>{contact.eyebrow}</Eyebrow>
             <h1 className={styles.title}>{contact.title}</h1>
             <p className={styles.lead}>{contact.lead}</p>
           </div>
@@ -43,18 +43,19 @@ export default function ContactPage() {
               </h2>
               <p className={styles.closingBody}>{contact.closingBody}</p>
 
+              {/* The address is shown in full as well as linked, so it can
+                  be copied by anyone who'd rather not open a mail client. */}
+              <a className={styles.email} href={contact.emailHref}>
+                <span className={styles.emailLabel}>{contact.emailLabel}</span>
+                <span className={styles.emailAddress}>
+                  {contact.emailAddress}
+                </span>
+              </a>
+
               <div className={styles.ctas}>
-                {contact.ctas.map((cta) => (
-                  <Button
-                    key={cta.href}
-                    href={cta.href}
-                    variant={cta.variant}
-                    external={cta.external}
-                    arrow={cta.variant === "secondary"}
-                  >
-                    {cta.label}
-                  </Button>
-                ))}
+                <Button href={contact.emailHref} variant="primary">
+                  {contact.cta}
+                </Button>
               </div>
             </section>
           </div>

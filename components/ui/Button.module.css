@@ -2,42 +2,56 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   border: 1px solid transparent;
   cursor: pointer;
   text-align: center;
   transition:
-    background-color 0.2s ease,
+    background 0.2s ease,
     border-color 0.2s ease,
     color 0.2s ease,
-    opacity 0.2s ease;
-}
-
-.arrow {
-  transition: transform 0.2s ease;
-}
-
-.base:hover .arrow {
-  transform: translateX(3px);
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
 }
 
 /* -----------------------------------------------------
-   Primary — the one filled action per page.
+   Primary — gold. The one filled action per page, and
+   the only place the brand colour is used as a surface.
 ----------------------------------------------------- */
 
 .primary {
-  padding: 15px 26px;
-  min-height: 50px;
+  padding: 14px 28px;
+  min-height: 48px;
   border-radius: 2px;
-  background: var(--bone);
-  color: #0a0a0a;
+  /* A slight vertical gradient keeps the fill from reading as flat paint. */
+  background: linear-gradient(
+    to bottom,
+    var(--accent-bright) 0%,
+    var(--accent) 58%,
+    var(--accent-deep) 100%
+  );
+  color: var(--on-accent);
   font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: 0.005em;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.16) inset;
 }
 
 .primary:hover {
-  background: #fffdf8;
+  background: linear-gradient(
+    to bottom,
+    #f0d1a2 0%,
+    var(--accent-bright) 58%,
+    var(--accent) 100%
+  );
+  /* Lifts the button off its plane on hover rather than just brightening. */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.22) inset,
+    0 6px 22px -8px rgba(215, 178, 126, 0.5);
+  transform: translateY(-1px);
+}
+
+.primary:active {
+  transform: translateY(0);
 }
 
 /* -----------------------------------------------------
@@ -58,27 +72,29 @@
 
 .secondary:hover {
   border-bottom-color: var(--accent);
-  color: #fffdf8;
+  color: var(--accent);
 }
 
 /* -----------------------------------------------------
-   Outline — used where a bordered action reads better
-   than a filled one (payment confirmation).
+   Outline — gold rule and gold label, for the second
+   action in a flow (payment confirmation).
 ----------------------------------------------------- */
 
 .outline {
-  padding: 15px 26px;
-  min-height: 50px;
+  padding: 14px 28px;
+  min-height: 48px;
   border-radius: 2px;
-  border-color: var(--line-strong);
-  color: var(--bone);
+  border-color: var(--accent-soft);
+  background: var(--accent-wash);
+  color: var(--accent);
   font-size: 0.9375rem;
   font-weight: 500;
 }
 
 .outline:hover {
   border-color: var(--accent);
-  background: rgba(215, 178, 126, 0.06);
+  background: rgba(215, 178, 126, 0.13);
+  color: var(--accent-bright);
 }
 
 .full {

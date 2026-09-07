@@ -13,7 +13,7 @@ export default function Footer({ narrow = false }: { narrow?: boolean }) {
 
   return (
     <footer className={styles.footer}>
-      <Container narrow={narrow}>
+      <Container narrow={narrow} className={styles.inner}>
         <div className={styles.top}>
           <div className={styles.brand}>
             <Logo size="md" />

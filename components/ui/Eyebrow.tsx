@@ -3,19 +3,16 @@ import styles from "./Eyebrow.module.css";
 
 type EyebrowProps = {
   children: ReactNode;
-  /** Small gold rule before the label. The site's one recurring accent. */
-  rule?: boolean;
   className?: string;
 };
 
-export default function Eyebrow({
-  children,
-  rule = false,
-  className = "",
-}: EyebrowProps) {
+/**
+ * Small caps label above a heading. Hierarchy comes from its size,
+ * tracking and colour — no leading rule.
+ */
+export default function Eyebrow({ children, className = "" }: EyebrowProps) {
   return (
     <p className={[styles.eyebrow, className].filter(Boolean).join(" ")}>
-      {rule ? <span className={styles.rule} aria-hidden="true" /> : null}
       {children}
     </p>
   );

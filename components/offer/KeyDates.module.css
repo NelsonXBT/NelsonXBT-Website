@@ -1,0 +1,98 @@
+/* =========================================================
+   KEY DATES — deadline, start date and the early CTA, as a
+   caption bar under the video. Compact by construction:
+   one row on a desktop, two short rows on a phone.
+========================================================= */
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px clamp(16px, 3vw, 28px);
+  padding: clamp(12px, 2vw, 15px) clamp(14px, 2.4vw, 18px);
+  border: 1px solid var(--line);
+  /* A gold left edge ties the bar to the action it carries, and matches
+     the treatment the checkout uses on its total. */
+  border-left: 2px solid var(--accent);
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--accent-wash) 0%,
+    rgba(215, 178, 126, 0) 72%
+  );
+}
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  /* The row gap is what separates the two dates when they wrap on a
+     narrow phone; the column gap sets the gutter beside the divider. */
+  gap: 10px clamp(14px, 2.6vw, 24px);
+  margin: 0;
+  min-width: 0;
+}
+
+.date {
+  min-width: 0;
+}
+
+/* A hairline between the two dates rather than a second border or a
+   bullet — the divider is the only thing separating them, so it has to
+   disappear when they stack. */
+.date + .date {
+  padding-left: clamp(14px, 2.6vw, 24px);
+  border-left: 1px solid var(--line);
+}
+
+.label {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+  white-space: nowrap;
+}
+
+.value {
+  margin: 3px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.9375rem, 3.4vw, 1.0625rem);
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--bone);
+  white-space: nowrap;
+}
+
+/* -----------------------------------------------------
+   THE ACTION
+   Full width while the bar is stacked, so the button is
+   never a stub under two lines of dates.
+----------------------------------------------------- */
+
+.cta {
+  flex: 1 1 100%;
+  /* Tighter than the standard primary: this is the early, secondary
+     placement of an action the pricing section states in full. */
+  min-height: 44px;
+  padding: 11px 22px;
+  font-size: 0.875rem;
+}
+
+/* Both dates fit beside each other from the narrowest phone up, so only
+   the button needs to come back onto the row. */
+@media (min-width: 560px) {
+  .cta {
+    flex: 0 0 auto;
+  }
+}
+
+/* Very narrow phones: let the two dates stack and drop the divider. */
+@media (max-width: 359px) {
+  .date + .date {
+    padding-left: 0;
+    border-left: 0;
+  }
+}

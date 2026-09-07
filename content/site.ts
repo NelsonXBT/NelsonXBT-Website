@@ -15,8 +15,8 @@ export const routes = {
   home: "/",
   workshop: "/workshop",
   payment: "/workshop/payment",
-  session: "/1-on-1",
-  sessionPayment: "/1-on-1/payment",
+  session: "/private-coaching",
+  sessionPayment: "/private-coaching/payment",
   contact: "/contact",
   terms: "/terms",
   privacy: "/privacy",
@@ -25,13 +25,20 @@ export const routes = {
 export const external = {
   youtube: "https://www.youtube.com/@NelsonXBT",
   telegramCommunity: "https://t.me/NelsonxbtSpace",
+  /** Kept for the payment flow, where confirmation happens on Telegram. */
   telegramDirect: "https://t.me/NelsonXBT",
   x: "https://x.com/nelson_xbt",
 } as const;
 
+/** The one address for business enquiries. Shown on /contact. */
+export const email = {
+  address: "nelsonxbt.contact@gmail.com",
+  href: "mailto:nelsonxbt.contact@gmail.com",
+} as const;
+
 export const nav = [
   { label: "Workshop", href: routes.workshop },
-  { label: "1-on-1", href: routes.session },
+  { label: "Private Coaching", href: routes.session },
   { label: "Contact", href: routes.contact },
 ] as const;
 

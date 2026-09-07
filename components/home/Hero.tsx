@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { hero } from "@/content/home";
 import { portrait } from "@/content/site";
-import Eyebrow from "@/components/ui/Eyebrow";
 import styles from "./Hero.module.css";
 
 /**
@@ -13,7 +12,6 @@ export default function Hero() {
     <section className={styles.hero}>
       <div className={styles.grid}>
         <div className={styles.copy}>
-          <Eyebrow rule>{hero.eyebrow}</Eyebrow>
           <h1 className={styles.headline}>{hero.headline}</h1>
           <p className={styles.intro}>{hero.intro}</p>
         </div>

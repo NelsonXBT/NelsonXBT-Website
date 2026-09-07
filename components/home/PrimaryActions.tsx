@@ -8,8 +8,8 @@ import styles from "./PrimaryActions.module.css";
 export default function PrimaryActions() {
   return (
     <section className={styles.section} aria-labelledby="work-with-me">
-      <Container>
-        <Eyebrow rule>
+      <Container className={styles.inner}>
+        <Eyebrow>
           <span id="work-with-me">{actions.eyebrow}</span>
         </Eyebrow>
 
@@ -22,7 +22,6 @@ export default function PrimaryActions() {
               <Button
                 href={item.href}
                 variant={item.variant}
-                arrow={item.variant === "secondary"}
                 className={styles.cta}
               >
                 {item.cta}

@@ -1,8 +1,12 @@
-import { external } from "@/content/site";
+import { email } from "@/content/site";
 
 /**
  * Content for the contact page. Deliberately free of unverifiable
  * specifics — no claims that aren't already established.
+ *
+ * One channel only: email. Telegram stays in the payment flow, where a
+ * confirmation needs to reach me quickly, but business enquiries belong
+ * somewhere they can be read and answered properly.
  */
 
 export const contact = {
@@ -30,19 +34,9 @@ export const contact = {
   ],
   closingTitle: "Get in touch",
   closingBody:
-    "Telegram is the fastest way to reach me. X works too if you would rather start there.",
-  ctas: [
-    {
-      label: "Message on Telegram",
-      href: external.telegramDirect,
-      variant: "primary" as const,
-      external: true,
-    },
-    {
-      label: "X",
-      href: external.x,
-      variant: "secondary" as const,
-      external: true,
-    },
-  ],
+    "Email is the way to reach me. Tell me what you have in mind and I will get back to you.",
+  emailLabel: "Email",
+  emailAddress: email.address,
+  emailHref: email.href,
+  cta: "Send an email",
 } as const;

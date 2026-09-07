@@ -4,7 +4,12 @@
 ========================================================= */
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   border-bottom: 1px solid var(--line);
+  background: rgba(11, 10, 9, 0.78);
+  backdrop-filter: blur(12px);
 }
 
 .headerInner {
@@ -12,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 68px;
+  min-height: 58px;
 }
 
 .back {
@@ -30,18 +35,32 @@
 }
 
 .main {
-  padding-block: clamp(34px, 6vw, 60px) clamp(48px, 7vw, 80px);
+  position: relative;
+  padding-block: clamp(24px, 4.4vw, 44px) clamp(34px, 5vw, 56px);
+  overflow: hidden;
+}
+
+/* Same warm bloom the offer pages use, so checkout still feels part of
+   the site even with the navigation stripped out. */
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 300px;
+  pointer-events: none;
+  background: var(--bloom-strong);
 }
 
 .head {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 12px;
+  gap: 10px;
 }
 
 .title {
-  font-size: clamp(2.125rem, 9vw, 3rem);
+  font-size: clamp(1.875rem, 8.4vw, 2.625rem);
 }
 
 .cohort {
@@ -50,11 +69,24 @@
   color: var(--muted);
 }
 
+/* -----------------------------------------------------
+   TOTAL
+   Its own lifted panel rather than a rule-bounded row:
+   the amount is the single fact that must not be misread.
+----------------------------------------------------- */
+
 .price {
-  margin-top: clamp(24px, 4vw, 32px);
-  padding-block: clamp(20px, 3.4vw, 26px);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  position: relative;
+  margin-top: clamp(18px, 3vw, 26px);
+  padding: clamp(14px, 2.4vw, 18px) clamp(16px, 2.6vw, 20px);
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  border-radius: 3px;
+  background: linear-gradient(
+    to right,
+    var(--accent-wash) 0%,
+    rgba(215, 178, 126, 0) 70%
+  );
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -70,7 +102,7 @@
 
 .priceValue {
   font-family: var(--font-display);
-  font-size: clamp(1.875rem, 7.5vw, 2.25rem);
+  font-size: clamp(1.75rem, 7vw, 2.125rem);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -90,6 +122,7 @@
 ----------------------------------------------------- */
 
 .steps {
+  position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -99,7 +132,7 @@
   display: grid;
   grid-template-columns: 26px minmax(0, 1fr);
   gap: 0 14px;
-  padding-block: clamp(24px, 4vw, 32px);
+  padding-block: clamp(18px, 3vw, 26px);
 }
 
 .step + .step {
@@ -112,20 +145,21 @@
   width: 26px;
   height: 26px;
   margin-top: 2px;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--accent-soft);
   border-radius: 50%;
+  background: var(--accent-wash);
   font-size: 0.75rem;
   color: var(--accent);
 }
 
 .stepTitle {
-  font-size: clamp(1.125rem, 4.6vw, 1.3125rem);
+  font-size: clamp(1.0625rem, 4.4vw, 1.25rem);
 }
 
 .stepBody {
-  margin-top: 8px;
+  margin-top: 6px;
   font-size: 0.9375rem;
-  line-height: 1.62;
+  line-height: 1.6;
   color: var(--muted);
 }
 
@@ -135,11 +169,11 @@
 }
 
 .address {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .confirm {
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 /* -----------------------------------------------------
@@ -147,10 +181,11 @@
 ----------------------------------------------------- */
 
 .warning {
+  position: relative;
   display: grid;
   grid-template-columns: 20px minmax(0, 1fr);
   gap: 12px;
-  padding: 16px 18px;
+  padding: 14px 16px;
   border: 1px solid var(--accent-soft);
   border-radius: 3px;
   background: rgba(215, 178, 126, 0.05);
@@ -170,7 +205,7 @@
 
 .warningText {
   font-size: 0.875rem;
-  line-height: 1.6;
+  line-height: 1.58;
   color: var(--muted);
 }
 
@@ -181,6 +216,6 @@
 
 @media (min-width: 640px) {
   .headerInner {
-    min-height: 84px;
+    min-height: 70px;
   }
 }

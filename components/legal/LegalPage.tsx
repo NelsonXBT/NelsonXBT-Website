@@ -34,7 +34,7 @@ export default function LegalPage({ content }: { content: LegalContent }) {
       <main className={styles.main}>
         <Container narrow>
           <div className={styles.head}>
-            <Eyebrow rule>{content.eyebrow}</Eyebrow>
+            <Eyebrow>{content.eyebrow}</Eyebrow>
             <h1 className={styles.title}>{content.title}</h1>
             <p className={styles.lead}>{content.lead}</p>
             <p className={styles.updated}>Last updated {legalUpdated}</p>
@@ -57,12 +57,9 @@ export default function LegalPage({ content }: { content: LegalContent }) {
               <p className={styles.paragraph}>{content.contact.body}</p>
 
               <div className={styles.cta}>
-                <Button
-                  href={content.contact.href}
-                  variant="secondary"
-                  external
-                  arrow
-                >
+                {/* A mailto, so it hands off to the mail client rather
+                    than opening a tab. */}
+                <Button href={content.contact.href} variant="secondary">
                   {content.contact.cta}
                 </Button>
               </div>

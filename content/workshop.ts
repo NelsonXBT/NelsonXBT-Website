@@ -1,4 +1,5 @@
 import { routes } from "@/content/site";
+import type { Video } from "@/content/video";
 
 /**
  * All Crypto Clarity Workshop information.
@@ -6,20 +7,40 @@ import { routes } from "@/content/site";
  */
 
 export const workshop = {
-  eyebrow: "Crypto Clarity Workshop",
   title: ["Crypto Clarity", "Workshop"],
   with: "with NelsonXBT",
   cohort: "Cohort 1 · 22nd to 28th September 2026",
   cohortCaps: "COHORT 1 · 22ND TO 28TH SEPTEMBER 2026",
   cohortDash: "Cohort 1 · 22nd – 28th September 2026",
-  price: { amount: "$49", currency: "USDT" },
+  price: { amount: "$50", currency: "USDT" },
   reserveHref: routes.payment,
+  /**
+   * Hosted on Bunny Stream. To move this back to YouTube, replace the
+   * three provider lines with `provider: "youtube"` and the video id —
+   * the player reads the provider and needs no change.
+   */
   video: {
-    id: "5Azz8WAqkFE",
+    provider: "bunny",
+    libraryId: "745906",
+    id: "7d40a663-7fd5-41d2-a7be-b687dfe111c2",
+    cdnHost: "vz-468a1901-975.b-cdn.net",
     poster: "/workshop-poster.jpg",
     posterAlt: "NelsonXBT Crypto Clarity Workshop",
     title: "Crypto Clarity Workshop with NelsonXBT",
-  },
+  } satisfies Video,
+} as const;
+
+/**
+ * The two dates that decide whether someone acts now or forgets. Shown
+ * directly under the video, where attention already is, rather than being
+ * held back for the pricing section at the bottom of the page.
+ */
+export const keyDates = {
+  items: [
+    { label: "Registration closes", value: "September 18th" },
+    { label: "Cohort 1 begins", value: "September 22nd" },
+  ],
+  cta: "Reserve my seat",
 } as const;
 
 export const coverage = {

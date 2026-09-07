@@ -33,10 +33,10 @@ export default function Reserve({
 }: ReserveProps) {
   return (
     <section className={styles.section} id="reserve">
-      <Container>
+      <Container className={styles.inner}>
         <div className={styles.grid}>
           <div className={styles.main}>
-            <Eyebrow rule>{eyebrow}</Eyebrow>
+            <Eyebrow>{eyebrow}</Eyebrow>
 
             {/* The price is the visual heading; this keeps the outline sound. */}
             <h2 className="visuallyHidden">Reserve your seat</h2>
@@ -52,7 +52,6 @@ export default function Reserve({
               href={href}
               variant="primary"
               external={external}
-              arrow
               className={styles.cta}
             >
               {cta}

@@ -10,22 +10,19 @@ type ButtonProps = {
   variant?: Variant;
   /** Opens in a new tab with safe rel attributes. */
   external?: boolean;
-  /** Trailing arrow, animated on hover. */
-  arrow?: boolean;
   full?: boolean;
   className?: string;
 };
 
 /**
  * The site's only action component. Renders a Next.js Link for internal
- * routes and a plain anchor for external ones, so both stay semantic.
+ * routes and a plain anchor for anything else, so both stay semantic.
  */
 export default function Button({
   children,
   href,
   variant = "primary",
   external = false,
-  arrow = false,
   full = false,
   className = "",
 }: ButtonProps) {
@@ -38,33 +35,30 @@ export default function Button({
     .filter(Boolean)
     .join(" ");
 
-  const content = (
-    <>
-      <span>{children}</span>
-      {arrow ? (
-        <span className={styles.arrow} aria-hidden="true">
-          &rarr;
-        </span>
-      ) : null}
-    </>
-  );
+  /*
+    A mailto: or tel: href is handed to the OS, not routed — so it never
+    goes through Link, and it must not get target="_blank" either, which
+    would leave an empty tab behind.
+  */
+  const isProtocol = /^(mailto|tel):/.test(href);
 
-  if (external) {
+  if (external || isProtocol) {
     return (
       <a
         className={classes}
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(external && !isProtocol
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
       >
-        {content}
+        {children}
       </a>
     );
   }
 
   return (
     <Link className={classes} href={href}>
-      {content}
+      {children}
     </Link>
   );
 }

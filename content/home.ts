@@ -1,7 +1,6 @@
-import { external, routes, site } from "@/content/site";
+import { external, routes } from "@/content/site";
 
 export const hero = {
-  eyebrow: `${site.person} · Crypto educator`,
   /**
    * The page's single H1. Kept as one string so it re-wraps naturally
    * instead of breaking at fixed points that only suit one viewport.
@@ -37,18 +36,23 @@ export const actions = {
   eyebrow: "Work with me",
   items: [
     {
-      title: "Book a 1-on-1 Session",
+      title: "Private Coaching",
       body: "Direct access to my knowledge and guidance, focused entirely on your questions.",
-      cta: "Book a 1-on-1 Session",
+      cta: "Book private coaching",
       href: routes.session,
       variant: "primary" as const,
     },
     {
-      title: "Work With Me",
+      title: "Partner with me",
       body: "Partnerships, collaborations, sponsorships and professional inquiries.",
-      cta: "Work With Me",
+      /*
+        Gold rule and gold label rather than the old underlined text link:
+        this is a real second action, not a footnote, and at a glance it
+        now reads as one — while the filled primary above still wins.
+      */
+      cta: "Partner with me",
       href: routes.contact,
-      variant: "secondary" as const,
+      variant: "outline" as const,
     },
   ],
 } as const;

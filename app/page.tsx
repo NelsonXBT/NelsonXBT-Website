@@ -9,7 +9,7 @@ import CommunityLinks from "@/components/home/CommunityLinks";
 export const metadata: Metadata = {
   title: "NelsonXBT — Practical Crypto Knowledge for Real Opportunities",
   description:
-    "NelsonXBT is the personal brand of Nelson Edeh. Practical crypto education, insights and ideas to help you understand the space and navigate its opportunities. Book a 1-on-1 session or work together.",
+    "NelsonXBT is the personal brand of Nelson Edeh. Practical crypto education, insights and ideas to help you understand the space and navigate its opportunities. Book private coaching or partner with me.",
   alternates: { canonical: "/" },
 };
 

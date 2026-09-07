@@ -1,4 +1,5 @@
 import { routes } from "@/content/site";
+import type { Video } from "@/content/video";
 
 /**
  * 1-on-1 coaching. Mirrors the workshop's information structure —
@@ -6,26 +7,29 @@ import { routes } from "@/content/site";
  */
 
 export const oneOnOne = {
-  eyebrow: "1-on-1 Coaching",
   title: ["Private", "Coaching"],
   with: "with NelsonXBT",
   format: "3 SESSIONS · 2 HOURS EACH",
   formatDash: "3 sessions · 2 hours each",
-  price: { amount: "$350", currency: "USDT" },
+  price: { amount: "$150", currency: "USDT" },
   /** Sits under the price, where the workshop shows its cohort date. */
   priceNote: "All three sessions · 6 hours total",
   reserveHref: routes.sessionPayment,
   /**
    * Shares the workshop's recording — it's the clearest existing footage
    * of how Nelson teaches, which is what someone weighing a private
-   * session wants to see. Swap the id here if a dedicated one is made.
+   * session wants to see. Swap the id here if a dedicated one is made,
+   * or switch `provider` to "youtube" and supply an id to host it there.
    */
   video: {
-    id: "5Azz8WAqkFE",
+    provider: "bunny",
+    libraryId: "745906",
+    id: "7d40a663-7fd5-41d2-a7be-b687dfe111c2",
+    cdnHost: "vz-468a1901-975.b-cdn.net",
     poster: "/workshop-poster.jpg",
     posterAlt: "NelsonXBT explaining his approach to crypto education",
     title: "How NelsonXBT teaches crypto",
-  },
+  } satisfies Video,
 } as const;
 
 export const sessionCoverage = {
