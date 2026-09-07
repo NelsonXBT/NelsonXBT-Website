@@ -1,11 +1,13 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 import Logo from "@/components/layout/Logo";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Button from "@/components/ui/Button";
 import Footer from "@/components/layout/Footer";
 import AddressBlock from "@/components/payment/AddressBlock";
-import { confirmStep, wallet } from "@/content/payment";
+import PriceTotal from "@/components/payment/PriceTotal";
+import { confirmStep, wallet, type Price } from "@/content/payment";
 import styles from "./Checkout.module.css";
 
 type CheckoutProps = {
@@ -14,13 +16,22 @@ type CheckoutProps = {
   title: string;
   /** One line of terms under the title: a cohort date, or the format. */
   detail: string;
-  price: { readonly amount: string; readonly currency: string };
+  price: Price;
   /** The exact amount to send, e.g. "49 USDT" — emphasised in step one. */
   amount: string;
   /** Where the "back" link returns to, and its label. */
   back: { readonly href: string; readonly label: string };
   /** What gets confirmed after payment — "your seat", "your sessions". */
   confirms: string;
+  /**
+   * Replaces the total panel, for an offer whose total can change after the
+   * page has loaded. Whatever is passed also owns the space directly under
+   * the panel. Given together with `amountSlot` or not at all — the two must
+   * resolve to the same price.
+   */
+  totalSlot?: ReactNode;
+  /** Replaces the emphasised amount in step one. See `totalSlot`. */
+  amountSlot?: ReactNode;
 };
 
 /**
@@ -36,6 +47,8 @@ export default function Checkout({
   amount,
   back,
   confirms,
+  totalSlot,
+  amountSlot,
 }: CheckoutProps) {
   return (
     <>
@@ -56,13 +69,7 @@ export default function Checkout({
             <p className={styles.cohort}>{detail}</p>
           </div>
 
-          <div className={styles.price}>
-            <span className={styles.priceLabel}>Total</span>
-            <span className={styles.priceValue}>
-              {price.amount}
-              <span>{price.currency}</span>
-            </span>
-          </div>
+          {totalSlot ?? <PriceTotal price={price} />}
 
           <ol className={styles.steps}>
             <li className={styles.step}>
@@ -73,7 +80,8 @@ export default function Checkout({
               <div>
                 <h2 className={styles.stepTitle}>Send Payment</h2>
                 <p className={styles.stepBody}>
-                  Send exactly <strong>{amount}</strong> to the address below.
+                  Send exactly {amountSlot ?? <strong>{amount}</strong>} to the
+                  address below.
                 </p>
 
                 <div className={styles.address}>

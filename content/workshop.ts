@@ -12,7 +12,7 @@ export const workshop = {
   cohort: "Cohort 1 · 22nd to 28th September 2026",
   cohortCaps: "COHORT 1 · 22ND TO 28TH SEPTEMBER 2026",
   cohortDash: "Cohort 1 · 22nd – 28th September 2026",
-  price: { amount: "$50", currency: "USDT" },
+  price: { amount: "$70", currency: "USDT" },
   reserveHref: routes.payment,
   /**
    * Hosted on Bunny Stream. To move this back to YouTube, replace the

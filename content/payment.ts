@@ -14,6 +14,29 @@ export const wallet = {
     "Send USDT only through BNB Smart Chain (BEP20). Sending through another network may result in loss of funds.",
 } as const;
 
+export type Price = {
+  readonly amount: string;
+  readonly currency: string;
+};
+
+/**
+ * A price together with the exact amount to send for it. The two are always
+ * derived from one another through `quoteFor`, never written down twice, so
+ * the total on screen and the figure in step one cannot fall out of step.
+ */
+export type Quote = {
+  readonly price: Price;
+  /** The exact amount to send, e.g. "70 USDT". */
+  readonly amount: string;
+};
+
+export function quoteFor(price: Price): Quote {
+  return {
+    price,
+    amount: `${price.amount.replace("$", "")} ${price.currency}`,
+  };
+}
+
 /**
  * The second step is identical for both offers; only the amount in
  * step one changes, so that step is supplied per offer.
