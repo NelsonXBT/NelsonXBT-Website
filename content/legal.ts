@@ -98,7 +98,7 @@ export const privacy = {
     {
       heading: "The embedded video",
       body: [
-        "The workshop and coaching pages show a video. It loads as a still image held on this site, and nothing is requested from the video host until you press play. Until then, the host knows nothing about your visit.",
+        "The workshop page shows a video. It loads as a still image held on this site, and nothing is requested from the video host until you press play. Until then, the host knows nothing about your visit.",
         "Once you press play, the player loads from the host — currently Bunny Stream — which receives the request and may collect technical data under its own privacy policy, including your IP address and details about your device. If a video is ever served from YouTube instead, the same applies to YouTube. If you would rather not share anything with a video host, don't press play.",
       ],
     },

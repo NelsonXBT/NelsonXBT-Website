@@ -83,7 +83,7 @@ export const topics = [
   {
     number: "07",
     title: "Build Your Crypto Clarity Framework",
-    body: "Bring everything together and create your own practical framework — how you discover opportunities, research them, trade or invest, manage risk, and decide what deserves your attention.",
+    body: "Bring everything together and create your own practical framework, how you discover opportunities, research them, trade or invest, manage risk, and decide what deserves your attention.",
   },
 ] as const;
 
